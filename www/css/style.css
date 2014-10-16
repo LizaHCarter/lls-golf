@@ -1,3 +1,11 @@
-i{
-    text-align: center;
+#content{
+  background-image: url('http://static4.depositphotos.com/1004998/325/i/950/depositphotos_3258821-Grass-background---golf-field.jpg')
+}
+
+#greeting{
+  color: white;
+}
+
+#pre{
+  color: white;
 }

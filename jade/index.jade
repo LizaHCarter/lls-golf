@@ -14,5 +14,7 @@ html
     ion-pane
       ion-header-bar.bar-positive
         h1.title Golf Game
-      ion-content(ng-controller='MainCtrl')
-        h3 {{greeting}}
+      ion-content(ng-controller='MainCtrl')#content
+        h3#greeting {{greeting}}
+        button(ng-click='start()') Start Game
+        pre#pre {{orientation | json}}

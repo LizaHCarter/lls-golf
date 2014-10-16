@@ -16,8 +16,10 @@
       <ion-header-bar class="bar-positive">
         <h1 class="title">Golf Game</h1>
       </ion-header-bar>
-      <ion-content ng-controller="MainCtrl">
-        <h3>{{greeting}}</h3>
+      <ion-content ng-controller="MainCtrl" id="content">
+        <h3 id="greeting">{{greeting}}</h3>
+        <button ng-click="start()">Start Game</button>
+        <pre id="pre">{{orientation | json}}</pre>
       </ion-content>
     </ion-pane>
   </body>
