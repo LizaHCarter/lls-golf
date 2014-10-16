@@ -19,3 +19,5 @@ html
         .area(style='width:{{x}}px; height:{{y}}px')
           button(ng-click='start()') Start Game
           .ball(style='left:{{ballX}}px; top:{{ballY}}px')
+          pre {{orientation | json}}
+          pre {{data | json}}

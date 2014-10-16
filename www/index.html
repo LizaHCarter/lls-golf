@@ -21,6 +21,8 @@
         <div style="width:{{x}}px; height:{{y}}px" class="area">
           <button ng-click="start()">Start Game</button>
           <div style="left:{{ballX}}px; top:{{ballY}}px" class="ball"></div>
+          <pre>{{orientation | json}}</pre>
+          <pre>{{data | json}}</pre>
         </div>
       </ion-content>
     </ion-pane>

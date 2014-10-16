@@ -3,24 +3,14 @@
   angular.module('lls-golf')
   .controller('MainCtrl', ['$scope', '$interval', function($scope, $interval){
     $scope.x = document.documentElement.clientWidth;
-    $scope.y = document.documentElement.clientHeight - 20;
-    $scope.ballX = $scope.x - 50;
-    $scope.ballY = $scope.y + 5;
-    $scope.greeting = 'hello';
-    function success(orientation){
-      console.log(orientation.alpha);
-      console.log(orientation.beta);
-      console.log(orientation.gamma);
-      $scope.orientation = orientation;
-      $scope.$digest();
-    }
-    function error(err){
-      console.log('error', err);
-    }
+    $scope.y = document.documentElement.clientHeight - 40;
+    $scope.ballX = ((5 * $scope.x)/6);
+    $scope.ballY = ((7 * $scope.y)/8);
 
-    $scope.start = function(){
-      console.log('starting gyroscope');
-      navigator.gyroscope.watchGyroscope(success, error, {frequency:100});
-    };
+    window.addEventListener('deviceorientation', function(data){
+      $scope.data = data;
+      console.log(data);
+      $scope.$digest();
+    });
   }]);
 })();
