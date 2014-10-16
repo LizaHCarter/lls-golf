@@ -2,6 +2,10 @@
   'use strict';
   angular.module('lls-golf')
   .controller('MainCtrl', ['$scope', '$interval', function($scope, $interval){
+    $scope.x = document.documentElement.clientWidth;
+    $scope.y = document.documentElement.clientHeight - 20;
+    $scope.ballX = $scope.x - 50;
+    $scope.ballY = $scope.y + 5;
     $scope.greeting = 'hello';
     function success(orientation){
       console.log(orientation.alpha);

@@ -16,5 +16,6 @@ html
         h1.title Golf Game
       ion-content(ng-controller='MainCtrl')#content
         h3#greeting {{greeting}}
-        button(ng-click='start()') Start Game
-        pre#pre {{orientation | json}}
+        .area(style='width:{{x}}px; height:{{y}}px')
+          button(ng-click='start()') Start Game
+          .ball(style='left:{{ballX}}px; top:{{ballY}}px')

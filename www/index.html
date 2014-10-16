@@ -18,8 +18,10 @@
       </ion-header-bar>
       <ion-content ng-controller="MainCtrl" id="content">
         <h3 id="greeting">{{greeting}}</h3>
-        <button ng-click="start()">Start Game</button>
-        <pre id="pre">{{orientation | json}}</pre>
+        <div style="width:{{x}}px; height:{{y}}px" class="area">
+          <button ng-click="start()">Start Game</button>
+          <div style="left:{{ballX}}px; top:{{ballY}}px" class="ball"></div>
+        </div>
       </ion-content>
     </ion-pane>
   </body>

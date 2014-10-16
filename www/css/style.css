@@ -1,11 +1,12 @@
-#content{
-  background-image: url('http://static4.depositphotos.com/1004998/325/i/950/depositphotos_3258821-Grass-background---golf-field.jpg')
-}
-
 #greeting{
   color: white;
 }
 
-#pre{
-  color: white;
+.ball{
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  z-index: 100;
 }
