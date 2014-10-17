@@ -18,6 +18,7 @@
       </ion-header-bar>
       <ion-content ng-controller="MainCtrl" id="content">
         <h3 id="greeting">{{greeting}}</h3>
+        <canvas id="golfCanvas"></canvas>
         <div style="width:{{x}}px; height:{{y}}px" class="area">
           <button ng-click="start()">Start Game</button>
           <div style="left:{{ballX}}px; top:{{ballY}}px" class="ball"></div>

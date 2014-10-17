@@ -10,3 +10,7 @@
   width: 20px;
   z-index: 100;
 }
+
+#golfCanvas{
+  border: 2px solid black;
+}
