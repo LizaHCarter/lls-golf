@@ -11,13 +11,14 @@
     <script src="js/app.js"></script>
     <script src="js/main_controller.js"></script>
   </head>
-  <body ng-app="lls-golf">
+  <body ng-app="lls-golf" onload="init()">
     <ion-pane>
       <ion-header-bar class="bar-positive">
         <h1 class="title">Golf Game</h1>
       </ion-header-bar>
       <ion-content ng-controller="MainCtrl" id="content">
         <h3 id="greeting">{{greeting}}</h3>
+        <canvas id="golfCanvas" width="{{canvasWidth}}" height="{{canvasHeight}}"></canvas>
         <div style="width:{{x}}px; height:{{y}}px" class="area">
           <button ng-click="start()">Start Game</button>
           <div style="left:{{ballX}}px; top:{{ballY}}px" class="ball"></div>
