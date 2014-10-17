@@ -6,29 +6,30 @@
     $scope.y = document.documentElement.clientHeight - 40;
     $scope.ballX = ((5 * $scope.x)/6);
     $scope.ballY = ((7 * $scope.y)/8);*/
-    $scope.canvasHeight = window.innerHeight;
-    $scope.canvasWidth = window.innerWidth;
+    var can,
+        ctx;
 
     function init(){
-      var can = document.getElementById('golfCanvas'),
-          ctx = can.getContext('2d');
+      can = document.getElementById('golfCanvas');
+      ctx = can.getContext('2d');
+      window.addEventListener('resize', resizeCanvas, true);
+      window.addEventListener('orientationchange', resizeCanvas, true);
+      resizeCanvas();
+      ctx.fillStyle= 'red';
+      ctx.fillRect(5,5,25,25);
 
-      function drawHole(){
-        ctx.fillStyle= 'black';
-        ctx.fillRect(20,20, 50, 50);
-        /*ctx.beginPath();
-        ctx.arc(10, 10, 5, 0, Math.PI*2, false);
-        ctx.closePath();
-        ctx.fill();*/
-      }
-      drawHole();
+    }
+
+    function resizeCanvas(){
+      can.height = window.innerHeight;
+      can.width = window.innerWidth;
     }
 
     window.addEventListener('deviceorientation', function(data){
       $scope.data = data;
-      console.log(data);
       $scope.$digest();
     });
+
     init();
   }]);
 })();
