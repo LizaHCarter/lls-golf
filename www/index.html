@@ -3,29 +3,33 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title>Golf</title>
+    <title>CaddyHack</title>
     <link href="css/style.css" rel="stylesheet">
     <link href="css/ionic.app.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Luckiest+Guy|Orbitron" rel="stylesheet" type="text/css">
     <script src="lib/ionic/js/ionic.bundle.js"></script>
     <script src="cordova.js"></script>
     <script src="js/app.js"></script>
     <script src="js/main_controller.js"></script>
   </head>
-  <body ng-app="lls-golf">
-    <ion-pane>
-      <ion-header-bar class="bar-positive">
-        <h1 class="title">Golf Game</h1>
-      </ion-header-bar>
-      <ion-content ng-controller="MainCtrl" id="content">
-        <h3 id="greeting">{{greeting}}</h3>
-        <canvas id="golfCanvas"></canvas>
-        <div style="width:{{x}}px; height:{{y}}px" class="area">
-          <button ng-click="start()">Start Game</button>
-          <div style="left:{{ballX}}px; top:{{ballY}}px" class="ball"></div>
-          <pre>{{orientation | json}}</pre>
-          <pre>{{data | json}}</pre>
+  <body ng-app="lls-golf" ng-controller="MainCtrl">
+    <div ng-show="greeting" class="row">
+      <div class="col">
+        <h1 id="caddy" style="font-family: &quot;Luckiest Guy&quot;, sans-serif;" class="title">Caddy<span style="font-family: &quot;Orbitron&quot;, sans-serif;">Hack</span></h1>
+        <div class="greeting">
+          <div style="background-image:url(&quot;http://media.mlive.com/grpress/sports_impact/photo/10818893-large.jpg&quot;);" class="photo"></div>
         </div>
-      </ion-content>
-    </ion-pane>
+        <button id="playButton" ng-click="startGame()" class="button button-full button-energized">Play!</button>
+      </div>
+    </div>
+    <canvas id="golfCanvas" ng-show="gameStarts"></canvas>
+    <div ng-show="gameOver" class="row">
+      <div class="col">
+        <h1 id="caddy" style="font-family: &quot;Luckiest Guy&quot;, sans-serif;, font-size: 40px;" class="title">Caddy<span style="font-family: &quot;Orbitron&quot;, sans-serif;">Hack</span></h1>
+        <h3>Game Over!</h3>
+        <h4>{{results}}</h4>
+        <button id="playButton" ng-click="startGame()" class="button button-full button-energized">Play Again!</button>
+      </div>
+    </div>
   </body>
 </html>
