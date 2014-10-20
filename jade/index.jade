@@ -3,22 +3,30 @@ html
   head
     meta(charset='utf-8')
     meta(name='viewport', content='initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width')
-    title Golf
+    title CaddyHack
     link(href='css/style.css', rel='stylesheet')
     link(href='css/ionic.app.css', rel='stylesheet')
+    link(href='http://fonts.googleapis.com/css?family=Luckiest+Guy|Orbitron' rel='stylesheet' type='text/css')
     script(src='lib/ionic/js/ionic.bundle.js')
     script(src='cordova.js')
     script(src='js/app.js')
     script(src='js/main_controller.js')
-  body(ng-app='lls-golf')
-    ion-pane
-      ion-header-bar.bar-positive
-        h1.title Golf Game
-      ion-content(ng-controller='MainCtrl')#content
-        h3#greeting {{greeting}}
-        canvas#golfCanvas
-        .area(style='width:{{x}}px; height:{{y}}px')
-          button(ng-click='start()') Start Game
-          .ball(style='left:{{ballX}}px; top:{{ballY}}px')
-          pre {{orientation | json}}
-          pre {{data | json}}
+  body(ng-app='lls-golf',ng-controller='MainCtrl')
+    .row(ng-show='greeting')
+      .col
+        h1.title#caddy(style='font-family: "Luckiest Guy", sans-serif;') Caddy
+          span(style='font-family: "Orbitron", sans-serif;') Hack
+        .greeting
+          .photo(style='background-image:url("http://media.mlive.com/grpress/sports_impact/photo/10818893-large.jpg");')
+
+        button.button.button-full.button-energized#playButton(ng-click='startGame()') Play!
+
+    canvas#golfCanvas(ng-show='gameStarts')
+
+
+    .row(ng-show='gameOver')
+      .col
+        h1.title#caddy(style='font-family: "Luckiest Guy", sans-serif;, font-size: 40px;') Caddy
+          span(style='font-family: "Orbitron", sans-serif;') Hack
+        h3 {{results}}
+        button.button.button-full.button-energized#playButton(ng-click='startGame()') Play Again!

@@ -1,16 +1,45 @@
-#greeting{
-  color: white;
-}
-
-.ball{
-  background-color: red;
-  border-radius: 50%;
-  position: absolute;
-  height: 20px;
-  width: 20px;
-  z-index: 100;
-}
+@import url(http://fonts.googleapis.com/css?family=Pacifico|Orbitron);
 
 #golfCanvas{
   border: 2px solid black;
+  background-image: url('https://c1.staticflickr.com/1/85/209708058_b5a5fb07a6_z.jpg')
+}
+
+title > #caddy{
+  font-family: 'Pacifico', cursive;
+}
+
+h1{
+  text-align: center;
+  color: #4a87ee;
+}
+
+#hack{
+  font-family: 'Orbitron', sans-serif;
+}
+
+#playButton{
+  padding: 5px;
+  margin-top: 50px;
+}
+
+#greetingHeader, #gameOverHeader{
+  margin-bottom: 20px;
+}
+
+h3, h4{
+  text-align: center;
+}
+
+.greeting > .photo{
+  height: 285px;
+  width: 285px;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  background-position: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 50px;
+  border: 1px solid #111111;
 }
